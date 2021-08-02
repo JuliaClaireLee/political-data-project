@@ -1,0 +1,51 @@
+---
+title: "Data Appendix"
+author: "Group J: Lydia Sheyda, Mirella Hernandez, & Julia Lee"
+date: "4/20/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+library(dbplyr)
+library(devtools)
+library(readr)
+```
+
+```{r}
+voter_guide<-read_csv("~/GROUP_J_DATA.csv")
+voter_guide
+```
+
+
+```{r}
+
+#making sure numeric variables are treated as numeric
+
+voter_guide$CDF<-as.numeric(voter_guide$CDF)
+voter_guide$Eagle<-as.numeric(voter_guide$Eagle)
+voter_guide$ACLU<-as.numeric(voter_guide$ACLU)
+voter_guide$ADA <- as.numeric(voter_guide$ADA)
+voter_guide$Liberal_mean<-as.numeric(voter_guide$Liberal_mean)
+voter_guide$ACU<-as.numeric(voter_guide$ACU)
+voter_guide$Conservative_mean<-as.numeric(voter_guide$Conservative_mean)
+voter_guide$NAACP<-as.numeric(voter_guide$NAACP)
+voter_guide$TVC<-as.numeric(voter_guide$TVC)
+
+``` 
+
+
+```{r}
+#Data Exploration
+str(voter_guide)
+head(voter_guide)
+glimpse(voter_guide)
+```
+
+
